@@ -13,19 +13,19 @@
         <title>Natours | Exciting tours for adventurous people</title>
     </head>
     <body>
-        <header class="header">
+        <header class="header"> <!-- standalone element, so header is a block -->
 
-            <div class="logo-box">
-                <img src="img/logo-white.png" alt="Logo" class="logo">  <!-- alt is needed for SEO and for the case that image fails to load -->
+            <div class="header__logo-box">
+                <img src="img/logo-white.png" alt="Logo" class="header__logo">  <!-- alt is needed for SEO and for the case that image fails to load -->
             </div>
 
-            <div class="text-box">
-                <h1 class="heading-primary">
-                    <span class="heading-primary-main">OUTDOORS</span>
-                    <span class="heading-primary-sub">is where life happens</span>
+            <div class="header__text-box"> <!-- dependant on block, so its element -->
+                <h1 class="heading-primary"> <!-- standalone element, so heading-primary is a block -->
+                    <span class="heading-primary--main">OUTDOORS</span> <!-- option of the block -->
+                    <span class="heading-primary--sub">is where life happens</span> <!-- option of the block -->
                 </h1>
 
-                <a href="#" class="btn btn-white btn-animated">Discover our tours</a>
+                <a href="#" class="btn btn--white btn--animated">Discover our tours</a>  <!-- standalone element, so btn is a block with modifiers -->
             </div>
 
         </header>
