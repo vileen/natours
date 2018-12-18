@@ -1,0 +1,13 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/vileen/natours.git",
+  "author": "Dominik <soczewka.dominik@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  },
+  "dependencies": {}
+}

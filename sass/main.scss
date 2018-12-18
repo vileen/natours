@@ -1,0 +1,192 @@
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+/* reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* box sizing is not inherited by default */
+}
+
+html {
+  /* font-size: 10px; !* to make life easier so 1rem == 10px *! */
+  /* bad practise anyway, people who uses f.e. special settings because they can't see good enough won't be able to see the page properly */
+  font-size: 62.5%; /* percentage setting solves the problem from above */
+}
+
+/* overall properties to take advantage of inheritance */
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+
+  box-sizing: border-box; /* borders and paddings no longer added to total width and height specified for the box */
+}
+
+.header {
+  height: 95vh; /* 95% of viewport height */
+  background-image: linear-gradient(
+                  to right bottom,
+                  rgba($color-primary-light, 0.8),
+                  rgba($color-primary-dark, 0.8)),
+  url(../img/hero.jpg); /* specifying 2 background, first is on top of the second one */
+  background-size: cover; /* try to fit element inside the box */
+  background-position: top; /* to make sure that top of the image stays the same, bottom can be cropped while resizing */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%); /* also try bennettfeely.com/clippy */ /* vh - viewport height changed dynamically, in this example 75% of this height */
+  position: relative;
+}
+
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.header__logo {
+  height: 3.5rem;
+}
+
+/*.logo-box:hover .logo {*/
+/*animation: moveInRight 0.5s ease-out;*/
+/*}*/
+
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden; /* in case that animation shakes a little when it shouldn't */
+  margin-bottom: 6rem;
+}
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 0.5s;
+  /*animation-delay: 3s;*/
+  /*animation-iteration-count: 3;*/
+  animation-timing-function: ease-out;
+}
+
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.74rem;
+  animation: moveInRight 0.5s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .5s;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.2); /* Y X blur color */
+}
+
+.btn:active { /* on click */
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.2); /* to make the impression that button goes down */
+}
+
+.btn--white {
+  background-color: white;
+  color: #777;
+}
+
+/* replicating button looks */
+.btn::after {
+  content: ''; /* required */
+  display: inline-block; /* required */
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* to place the element behind the actual button */
+  transition: all .4s;
+}
+.btn--white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+/* END  */
+
+.btn--animated {
+  animation: moveInBottom .3s ease-out .3s; /* keyframe, duration, timing function, delay */
+  animation-fill-mode: backwards; /* automatically apply properties from 0% before animation starts */
+}
