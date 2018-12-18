@@ -8,14 +8,18 @@ Dark green: #28b485
 */
 
 /* reset */
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* borders and paddings no longer added to total width and height specified for the box */
+    box-sizing: inherit; /* box sizing is not inherited by default */
 }
 
 html {
-    font-size: 10px; /* to make life easier so 1rem == 10px */
+    /*font-size: 10px; !* to make life easier so 1rem == 10px *!*/
+    /* bad practise anyway, people who uses f.e. special settings because they can't see good enough won't be able to see the page properly*/
+    font-size: 62.5%; /* percentage setting solves the problem from above */
 }
 
 /* overall properties to take advantage of inheritance */
@@ -26,6 +30,8 @@ body {
     line-height: 1.7;
     color: #777;
     padding: 3rem;
+
+    box-sizing: border-box; /* borders and paddings no longer added to total width and height specified for the box */
 }
 
 .header {
