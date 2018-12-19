@@ -1,0 +1,44 @@
+.row {
+  max-width: $grid-width; /* in case of viewport smaller than 114rem, it adapts */
+  background-color: #eee;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix; // needed since columns are floating and height of the parent element was equal to 0
+
+  [class^="col-"] { // select all of the elements that class starts with col-
+    background-color: orangered;
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2); /* in sass its possible to mix units f.e. rem with px */
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - (2* #{$gutter-horizontal})) / 3); /* in sass its possible to mix units f.e. rem with px */
+  }
+
+  .col-2-of-3 {
+    width: calc(2 * ((100% - (2 * #{$gutter-horizontal})) / 3) + #{$gutter-horizontal}); /* in sass its possible to mix units f.e. rem with px */
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - (3 * #{$gutter-horizontal})) / 4); /* in sass its possible to mix units f.e. rem with px */
+  }
+
+  .col-2-of-4 {
+    width: calc(2 * ((100% - (3 * #{$gutter-horizontal})) / 4) + #{$gutter-horizontal}); /* in sass its possible to mix units f.e. rem with px */
+  }
+
+  .col-3-of-4 {
+    width: calc(3 * ((100% - (3 * #{$gutter-horizontal})) / 4) + (2 * #{$gutter-horizontal})); /* in sass its possible to mix units f.e. rem with px */
+  }
+}
