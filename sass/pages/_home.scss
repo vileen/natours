@@ -3,3 +3,19 @@
   padding: 25rem 0;
   margin-top: -20vh;
 }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+                  to right bottom,
+                  rgba($color-primary-light, 0.8),
+                  rgba($color-primary-dark, 0.8)),
+  url(../../img/nat-4.jpg); /* specifying 2 background, first is on top of the second one */
+  background-size: cover; /* try to fit element inside the box */
+  transform: skewY(-7deg);
+  margin-top: -10rem;
+
+  & > * {
+    transform: skewY(7deg); // skewing back everything that is direct child of section features to prevent from unnecessary code splitting
+  }
+}
