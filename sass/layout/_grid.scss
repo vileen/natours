@@ -1,6 +1,5 @@
 .row {
   max-width: $grid-width; /* in case of viewport smaller than 114rem, it adapts */
-  background-color: #eee;
   margin: 0 auto;
 
   &:not(:last-child) {
@@ -10,7 +9,6 @@
   @include clearfix; // needed since columns are floating and height of the parent element was equal to 0
 
   [class^="col-"] { // select all of the elements that class starts with col-
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {

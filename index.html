@@ -1,96 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="css/icon-font.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
-        <title>Natours | Exciting tours for adventurous people</title>
-    </head>
-    <body>
-        <header class="header"> <!-- standalone element, so header is a block -->
+    <link rel="stylesheet" href="css/icon-font.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 
-            <div class="header__logo-box">
-                <img src="img/logo-white.png" alt="Logo" class="header__logo">  <!-- alt is needed for SEO and for the case that image fails to load -->
+    <title>Natours | Exciting tours for adventurous people</title>
+</head>
+<body>
+<header class="header"> <!-- standalone element, so header is a block -->
+
+    <div class="header__logo-box">
+        <img src="img/logo-white.png" alt="Logo" class="header__logo">
+        <!-- alt is needed for SEO and for the case that image fails to load -->
+    </div>
+
+    <div class="header__text-box"> <!-- dependant on block, so its element -->
+        <h1 class="heading-primary"> <!-- standalone element, so heading-primary is a block -->
+            <span class="heading-primary--main">OUTDOORS</span> <!-- option of the block -->
+            <span class="heading-primary--sub">is where life happens</span> <!-- option of the block -->
+        </h1>
+
+        <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+        <!-- standalone element, so btn is a block with modifiers -->
+    </div>
+
+</header>
+
+<main>
+    <section  class="section-about" > <!-- using utility margin function to make sure that heading is reusable component since margin is going to be different across the whole page -->
+        <div class="u-center-text u-margin-bottom-big">
+            <h2 class="heading-secondary">
+                Exciting tours for adventurous people
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-2">
+                <h3 class="heading-tertiary u-margin-bottom-small">You're going to fall in love with nature</h3>
+                <p class="paragraph">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid atque cumque cupiditate delectus eligendi enim est, eum ex, exercitationem labore laudantium obcaecati omnis quae, quasi recusandae ut velit voluptas!
+                </p>
+
+                <h3 class="heading-tertiary u-margin-bottom-small">Live adventures like you never have before</h3>
+                <p class="paragraph">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur dolores enim mollitia neque porro praesentium quis tenetur unde voluptatum.
+                </p>
+
+                <a href="#" class="btn-text">Learn more &rarr;</a>
             </div>
-
-            <div class="header__text-box"> <!-- dependant on block, so its element -->
-                <h1 class="heading-primary"> <!-- standalone element, so heading-primary is a block -->
-                    <span class="heading-primary--main">OUTDOORS</span> <!-- option of the block -->
-                    <span class="heading-primary--sub">is where life happens</span> <!-- option of the block -->
-                </h1>
-
-                <a href="#" class="btn btn--white btn--animated">Discover our tours</a>  <!-- standalone element, so btn is a block with modifiers -->
+            <div class="col-1-of-2">
+                <div class="composition">
+                    <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
+                    <img src="img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
+                    <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+                </div>
             </div>
+        </div>
+    </section>
+</main>
 
-        </header>
-
-        <!--<section class="grid-test">-->
-            <!--<div class="row">-->
-                <!--<div class="col-1-of-2">-->
-                    <!--Col 1 of 2-->
-                <!--</div>-->
-                <!--<div class="col-1-of-2">-->
-                    <!--Col 1 of 2-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="col-1-of-3">-->
-                    <!--Col 1 of 3-->
-                <!--</div>-->
-                <!--<div class="col-1-of-3">-->
-                    <!--Col 1 of 3-->
-                <!--</div>-->
-                <!--<div class="col-1-of-3">-->
-                    <!--Col 1 of 3-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="col-1-of-3">-->
-                    <!--Col 1 of 3-->
-                <!--</div>-->
-                <!--<div class="col-2-of-3">-->
-                    <!--Col 2 of 3-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="col-1-of-4">-->
-                    <!--Col 1 of 4-->
-                <!--</div>-->
-                <!--<div class="col-1-of-4">-->
-                    <!--Col 1 of 4-->
-                <!--</div>-->
-                <!--<div class="col-1-of-4">-->
-                    <!--Col 1 of 4-->
-                <!--</div>-->
-                <!--<div class="col-1-of-4">-->
-                    <!--Col 1 of 4-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="col-1-of-4">-->
-                    <!--Col 1 of 4-->
-                <!--</div>-->
-                <!--<div class="col-1-of-4">-->
-                    <!--Col 1 of 4-->
-                <!--</div>-->
-                <!--<div class="col-2-of-4">-->
-                    <!--Col 2 of 4-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-                <!--<div class="col-1-of-4">-->
-                    <!--Col 1 of 4-->
-                <!--</div>-->
-                <!--<div class="col-3-of-4">-->
-                    <!--Col 3 of 4-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</section>-->
-    </body>
+<!--<section class="grid-test">-->
+<!--<div class="row">-->
+<!--<div class="col-1-of-2">-->
+<!--Col 1 of 2-->
+<!--</div>-->
+<!--<div class="col-1-of-2">-->
+<!--Col 1 of 2-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--<div class="col-1-of-3">-->
+<!--Col 1 of 3-->
+<!--</div>-->
+<!--<div class="col-1-of-3">-->
+<!--Col 1 of 3-->
+<!--</div>-->
+<!--<div class="col-1-of-3">-->
+<!--Col 1 of 3-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--<div class="col-1-of-3">-->
+<!--Col 1 of 3-->
+<!--</div>-->
+<!--<div class="col-2-of-3">-->
+<!--Col 2 of 3-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--<div class="col-1-of-4">-->
+<!--Col 1 of 4-->
+<!--</div>-->
+<!--<div class="col-1-of-4">-->
+<!--Col 1 of 4-->
+<!--</div>-->
+<!--<div class="col-1-of-4">-->
+<!--Col 1 of 4-->
+<!--</div>-->
+<!--<div class="col-1-of-4">-->
+<!--Col 1 of 4-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--<div class="col-1-of-4">-->
+<!--Col 1 of 4-->
+<!--</div>-->
+<!--<div class="col-1-of-4">-->
+<!--Col 1 of 4-->
+<!--</div>-->
+<!--<div class="col-2-of-4">-->
+<!--Col 2 of 4-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--<div class="col-1-of-4">-->
+<!--Col 1 of 4-->
+<!--</div>-->
+<!--<div class="col-3-of-4">-->
+<!--Col 3 of 4-->
+<!--</div>-->
+<!--</div>-->
+<!--</section>-->
+</body>
 </html>
