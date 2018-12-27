@@ -21,11 +21,18 @@
     width: 15rem;
     height: 15rem;
     float: left;
-    -webkit-shape-outside: circle(50% at 50% 50%); // 50% radius
-    shape-outside: circle(50% at 50% 50%); // 50% radius
     clip-path: circle(50% at 50% 50%); // 50% radius
     transform: translateX(-3rem) skewX(12deg); // since element is floated, translateX instead of messing with margins to move element, skew since selector from above won't work on the shape, for now it's impossible to apply 2 transform properties
     position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+    @supports(clip-path: polygon(0 0)) {
+      clip-path: circle(50% at 50% 50%); // 50% radius
+      -webkit-shape-outside: circle(50% at 50% 50%); // 50% radius
+      shape-outside: circle(50% at 50% 50%); // 50% radius
+      border-radius: unset;
+    }
 
     @include respond(phone) {
       transform: translate(-3rem) skewX(0);
