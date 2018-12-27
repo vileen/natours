@@ -4,12 +4,21 @@
                   to right bottom,
                   rgba($color-primary-light, 0.8),
                   rgba($color-primary-dark, 0.8)),
-  url(../../img/hero.jpg); /* specifying 2 background, first is on top of the second one */
+  url(../../img/hero-small.jpg); /* specifying 2 background, first is on top of the second one */
   background-size: cover; /* try to fit element inside the box */
   background-position: top; /* to make sure that top of the image stays the same, bottom can be cropped while resizing */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%); /* also try bennettfeely.com/clippy */ /* vh - viewport height changed dynamically, in this example 75% of this height */
   position: relative;
 
+  @media (min-resolution: 192dpi) /* for apple retina display */ and (min-width: 37.5em) /* and yet there is no point in using big image on small devices */, /* comma works like OR */
+  (min-width: 125em) /* for lower dpi but bigger screens */ {
+    background-image: linear-gradient(
+                    to right bottom,
+                    rgba($color-primary-light, 0.8),
+                    rgba($color-primary-dark, 0.8)),
+    url(../../img/hero.jpg); // loading bigger image in case of bigger resolution
+  }
+  
   @include respond(phone) {
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0% 100%);
   }
