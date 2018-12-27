@@ -11,9 +11,25 @@ html {
   /* font-size: 10px; !* to make life easier so 1rem == 10px *! */
   /* bad practise anyway, people who uses f.e. special settings because they can't see good enough won't be able to see the page properly */
   font-size: 62.5%; /* percentage setting solves the problem from above */
+
+  @include respond(tab-land) { // < 1200
+    font-size: 56.25%;
+  }
+  @include respond(tab-port) { // < 900
+    font-size: 50%;
+  }
+  @include respond(big-desktop) { // > 1800
+    font-size: 75%;
+  }
+
 }
 
 /* overall properties to take advantage of inheritance */
 body {
   box-sizing: border-box; /* borders and paddings no longer added to total width and height specified for the box */
+  padding: 3rem;
+
+  @include respond(tab-port) { // < 900
+    padding: 0;
+  }
 }
