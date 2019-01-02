@@ -35,18 +35,19 @@
 // 1rem/1em in media queries is always equal to default browser setting, which is 16px, changing that value in html selector doesn't affect them
 // using ems' instead of rems' since rems' fail to work in media queries in some browsers
 // using ems altogether since user can change default browser settings
+// only screen means that for print media queries won't apply
 @mixin respond($breakpoint) {
   @if  $breakpoint == phone {
-    @media (max-width: 37.5em) { @content }; // 600px
+    @media only screen and (max-width: 37.5em) { @content }; // 600px
   }
   @else if  $breakpoint == tab-port {
-    @media (max-width: 56.25em) { @content }; // 900px
+    @media only screen and (max-width: 56.25em) { @content }; // 900px
   }
   @else if  $breakpoint == tab-land {
-    @media (max-width: 75em) { @content }; // 1200px
+    @media only screen and (max-width: 75em) { @content }; // 1200px
   }
   @else if  $breakpoint == big-desktop {
-    @media (min-width: 112.5em) { @content }; //1800px+
+    @media only screen and (min-width: 112.5em) { @content }; //1800px+
   }
 }
 

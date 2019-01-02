@@ -14,9 +14,9 @@
     height: 95vh; /* 95% of viewport height */
   }
 
-  @media (min-resolution: 192dpi) /* for apple retina display */ and (min-width: 37.5em) /* and yet there is no point in using big image on small devices */, /* comma works like OR */
-  (-webkit-min-device-pixel-ratio: 2) /* polyfill for safari */ and (min-width: 37.5em),
-  (min-width: 125em) /* for lower dpi but bigger screens */ {
+  @media  only screen and (min-resolution: 192dpi) /* for apple retina display */ and (min-width: 37.5em) /* and yet there is no point in using big image on small devices */, /* comma works like OR */
+  only screen and (-webkit-min-device-pixel-ratio: 2) /* polyfill for safari */ and (min-width: 37.5em),
+  only screen and (min-width: 125em) /* for lower dpi but bigger screens */ {
     background-image: linear-gradient(
                     to right bottom,
                     rgba($color-primary-light, 0.8),
